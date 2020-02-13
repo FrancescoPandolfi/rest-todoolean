@@ -20,19 +20,24 @@ $(document).ready(function () {
 
 
   var currentAttr = '';
+  var text = '';
   $(document).on('click', '.text p', function() {
     currentAttr = $(this).parent('li').attr('data-id');
-    var text = $(this).html();
+    text = $(this).html();
     $(this).html('');
     $(this).parent('li').prepend('<input class="modify" type="text" value="' + text + '">');
-    $(this).parent('li').find('.modify').focus();
-    $(this).parent('li').find('.modify').val('');
-    $(this).parent('li').find('.modify').val(text);
+    $(this).parent('li').find('.modify').focus().val('').val(text);
+    // $(this).parent('li').find('.modify').val('');
+    // $(this).parent('li').find('.modify').val(text);
+    $('.block').show();
+    $(this).parent('li').addClass('focus');
   });
 
 
+
+
   $(document).on('keypress', '.modify', function(event) {
-    var text = $('.modify').val();
+    text = $('.modify').val();
     if(event.which == 13) {
 
       $.ajax({
@@ -51,9 +56,8 @@ $(document).ready(function () {
           alert(error);
         }
       });
-
+      $('.block').hide();
     }
-
   });
 
 
