@@ -24,8 +24,10 @@ $(document).ready(function () {
     currentAttr = $(this).parent('li').attr('data-id');
     var text = $(this).html();
     $(this).html('');
-    $(this).parent('li').prepend('<input class="modify" type="text" value="' + text + '">')
-    console.log(currentAttr);
+    $(this).parent('li').prepend('<input class="modify" type="text" value="' + text + '">');
+    $(this).parent('li').find('.modify').focus();
+    $(this).parent('li').find('.modify').val('');
+    $(this).parent('li').find('.modify').val(text);
   });
 
 
@@ -53,6 +55,8 @@ $(document).ready(function () {
     }
 
   });
+
+
 
 
 

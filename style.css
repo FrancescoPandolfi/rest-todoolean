@@ -3,6 +3,8 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  font-size: 14px;
+  font-family: sans-serif;
 }
 
 /* body {
@@ -33,6 +35,12 @@
   margin: 20px;
   width: 150px;
 }
+.modify {
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  border: 0;
+}
 
 li {
   position: relative;
@@ -44,4 +52,12 @@ li {
   right: 10px;
   top: 10px;
   cursor: pointer;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background: yellow;
+}
+
+::selection {
+  background: yellow;
 }
