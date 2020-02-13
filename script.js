@@ -14,20 +14,43 @@ $(document).ready(function () {
 
   $(document).on('click', '.delete', function() {
     var getAttr = $(this).parent('.text').attr('data-id');
-    // console.log(getAttr);
+    deleteItem(getAttr);
+  });
 
-    $.ajax({
-      url: 'http://157.230.17.132:3025/todos/' + getAttr,
-      method: 'DELETE',
-      success: function(data) {
-        $('.list').html('');
-        getAll();
-      },
-      error: function(error) {
-        alert(error);
-      }
-    });
 
+
+  var currentAttr = '';
+  $(document).on('click', '.text p', function() {
+    currentAttr = $(this).parent('li').attr('data-id');
+    var text = $(this).html();
+    $(this).html('');
+    $(this).parent('li').prepend('<input class="modify" type="text" value="' + text + '">')
+    console.log(currentAttr);
+  });
+
+
+  $(document).on('keypress', '.modify', function(event) {
+    var text = $('.modify').val();
+    if(event.which == 13) {
+
+      $.ajax({
+        url: 'http://157.230.17.132:3025/todos/' + currentAttr,
+        method: 'PATCH',
+        data: {
+        text: text},
+        success: function(data) {
+          console.log(data);
+
+          $('.list').html('');
+          getAll();
+
+        },
+        error: function(error) {
+          alert(error);
+        }
+      });
+
+    }
 
   });
 
@@ -36,7 +59,31 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
 
 
 
@@ -80,6 +127,20 @@ function insertText(text) {
       $('.list').html('');
       getAll();
 
+    },
+    error: function(error) {
+      alert(error);
+    }
+  });
+}
+
+function deleteItem(getAttr) {
+  $.ajax({
+    url: 'http://157.230.17.132:3025/todos/' + getAttr,
+    method: 'DELETE',
+    success: function(data) {
+      $('.list').html('');
+      getAll();
     },
     error: function(error) {
       alert(error);

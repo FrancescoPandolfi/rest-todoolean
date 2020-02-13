@@ -10,6 +10,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.js" charset="utf-8"></script>
@@ -31,7 +32,7 @@
 
 
   <script id="list-item" type="text/x-handlebars-template">
-    <li data-id="{{id}}" class="text">{{text}}<span class="delete">X</span></li>
+    <li data-id="{{id}}" class="text"><p>{{text}}</p><span class="delete">X</span></li>
   </script>
 
   <script src="script.js" charset="utf-8"></script>

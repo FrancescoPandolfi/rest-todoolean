@@ -2,11 +2,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
-body {
+/* body {
   margin: 30px;
-}
+} */
 
 .text {
   padding: 10px;
@@ -14,7 +15,7 @@ body {
   background: lightgrey;
 }
 
-.add {
+/* .add {
   background: #adc25b;
   position: fixed;
   top: 30px;
@@ -26,14 +27,16 @@ body {
   vertical-align: middle;
   border-radius: 25px;
 
-}
+} */
 
-input {
-  margin-bottom: 15px;
+.enter-text {
+  margin: 20px;
+  width: 150px;
 }
 
 li {
   position: relative;
+  margin: 20px;
 }
 
 .delete {
