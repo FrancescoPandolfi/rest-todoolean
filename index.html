@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <!-- handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.js" charset="utf-8"></script>
+
+  <title>todoolean</title>
+</head>
+<body>
+
+  <!-- <div class="add">
+    <p>+</p>
+  </div> -->
+
+  <input class="enter-text" type="text" value="" placeholder="Inserisci qualcosa">
+
+
+  <ul class="list">
+
+  </ul>
+
+
+  <script id="list-item" type="text/x-handlebars-template">
+    <li data-id="{{id}}" class="text">{{text}}<span class="delete">X</span></li>
+  </script>
+
+  <script src="script.js" charset="utf-8"></script>
+
+</body>
+</html>

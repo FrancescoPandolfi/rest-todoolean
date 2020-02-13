@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 30px;
+}
+
+.text {
+  padding: 10px;
+  margin-bottom: 15px;
+  background: lightgrey;
+}
+
+.add {
+  background: #adc25b;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 25px;
+
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+li {
+  position: relative;
+}
+
+.delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
